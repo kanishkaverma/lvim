@@ -1,6 +1,9 @@
--- lvim.builtin.cmp.experimental.ghost_text = true
 
-lvim.colorscheme = "rose-pine"
+
+lvim.builtin.cmp.experimental.ghost_text = true
+
+
+lvim.colorscheme = "duskfox"
 
 lvim.log.level = "warn"
 lvim.builtin.alpha.active = true

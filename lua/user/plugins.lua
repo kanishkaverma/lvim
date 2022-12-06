@@ -9,6 +9,8 @@ lvim.plugins = {
       require("trouble").setup {}
     end,
   },
+"EdenEast/nightfox.nvim",
+  "rlane/pounce.nvim",
   "ellisonleao/gruvbox.nvim",
   "LunarVim/synthwave84.nvim",
   "roobert/tailwindcss-colorizer-cmp.nvim",

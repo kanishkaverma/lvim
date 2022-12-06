@@ -1,8 +1,10 @@
-require "user.lsp.languages.rust"
-require "user.lsp.languages.go"
+-- require "user.lsp.languages.rust"
+-- require "user.lsp.languages.go"
 require "user.lsp.languages.python"
 require "user.lsp.languages.js-ts"
 require "user.lsp.languages.sh"
+require "user.lsp.languages.emmet"
+require "user.lsp.languages.clangd"
 
 lvim.lsp.diagnostics.virtual_text = false
 
@@ -11,7 +13,7 @@ lvim.builtin.treesitter.ensure_installed = {
   "java",
 }
 
-vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "jdtls" })
+vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "jdtls", "clangd" })
 
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {

@@ -1,5 +1,7 @@
 -- Additional Plugins
 lvim.plugins = {
+"EdenEast/nightfox.nvim",
+  "rlane/pounce.nvim",
   "ellisonleao/gruvbox.nvim",
   "nvim-treesitter/playground",
   "nvim-treesitter/nvim-treesitter-textobjects",
@@ -9,7 +11,7 @@ lvim.plugins = {
   "opalmay/vim-smoothie",
   -- "j-hui/fidget.nvim",
   "windwp/nvim-ts-autotag",
-  "kylechui/nvim-surround",
+  -- "kylechui/nvim-surround",
   "christianchiarulli/harpoon",
   "MattesGroeger/vim-bookmarks",
   "NvChad/nvim-colorizer.lua",
@@ -71,11 +73,46 @@ lvim.plugins = {
   { "tzachar/cmp-tabnine", run = "./install.sh" },
   {
     "zbirenbaum/copilot.lua",
-    -- event = { "VimEnter" },
+    event = { "VimEnter" },
     config = function()
       vim.defer_fn(function()
         require("copilot").setup {
+          panel = {
+            enabled = true,
+            auto_refresh = true,
+            keymap = {
+              jump_prev = "[[",
+              jump_next = "]]",
+              accept = "<C-a>",
+              refresh = "gr",
+              open = "<M-CR>",
+            },
+          },
+          suggestion = {
+            enabled = true,
+            auto_trigger = true,
+            debounce = 75,
+            keymap = {
+              accept = "<C-a>",
+              next = "<M-]>",
+              prev = "<M-[>",
+              dismiss = "<C-]>",
+            },
+          },
+          filetypes = {
+            yaml = false,
+            markdown = false,
+            help = false,
+            gitcommit = false,
+            gitrebase = false,
+            hgcommit = false,
+            svn = false,
+            cvs = false,
+            ["."] = false,
+          },
+          copilot_node_command = "node", -- Node version must be < 18
           plugin_manager_path = os.getenv "LUNARVIM_RUNTIME_DIR" .. "/site/pack/packer",
+          server_opts_overrides = {},
         }
       end, 100)
     end,

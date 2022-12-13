@@ -3,7 +3,7 @@
 lvim.builtin.cmp.experimental.ghost_text = true
 
 
-lvim.colorscheme = "duskfox"
+lvim.colorscheme = "darkplus"
 
 lvim.log.level = "warn"
 lvim.builtin.alpha.active = true
@@ -78,11 +78,13 @@ local options = {
   wrap = false, -- display lines as one long line
   scrolloff = 0,
   sidescrolloff = 8,
-  guifont = "monospace:h17", -- the font used in graphical neovim applications
+  guifont = "JetBrains Mono:h13", -- the font used in graphical neovim applications
   title = true,
   -- colorcolumn = "80",
   -- colorcolumn = "120",
 }
+
+  vim.g.neovide_refresh_rate = 144
 -- vim.g.loaded_netrw = 1
 -- vim.g.loaded_netrwPlugin = 1
 -- vim.opt.fillchars.eob = " "

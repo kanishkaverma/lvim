@@ -7,6 +7,17 @@ lvim.plugins = {
   "nvim-treesitter/nvim-treesitter-textobjects",
   "p00f/nvim-ts-rainbow",
   "mfussenegger/nvim-jdtls",
+{ 
+  'olivercederborg/poimandres.nvim',
+  config = function()
+    require('poimandres').setup {
+      -- leave this setup function empty for default config
+      -- or refer to the configuration section
+      -- for configuration options
+    }
+  end
+},
+  { "catppuccin/nvim", as = "catppuccin" } ,
   -- "karb94/neoscroll.nvim",
   "opalmay/vim-smoothie",
   -- "j-hui/fidget.nvim",
@@ -71,6 +82,12 @@ lvim.plugins = {
     run = "cd js && npm ci",
   },
   { "tzachar/cmp-tabnine", run = "./install.sh" },
+{
+  "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+  config = function()
+    require("lsp_lines").setup()
+  end,
+},
   {
     "zbirenbaum/copilot.lua",
     event = { "VimEnter" },

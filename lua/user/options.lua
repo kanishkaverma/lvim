@@ -3,7 +3,7 @@
 lvim.builtin.cmp.experimental.ghost_text = true
 
 
-lvim.colorscheme = "duskfox"
+lvim.colorscheme = "darkplus"
 
 lvim.log.level = "warn"
 lvim.builtin.alpha.active = true
@@ -96,7 +96,7 @@ local options = {
   -- colorcolumn = "120",
 }
 
--- vim.g.neovide_refresh_rate = 144
+  vim.g.neovide_refresh_rate = 144
 -- vim.g.loaded_netrw = 1
 -- vim.g.loaded_netrwPlugin = 1
 -- vim.opt.fillchars.eob = " "

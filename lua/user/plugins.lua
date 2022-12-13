@@ -30,6 +30,17 @@ lvim.plugins = {
     end,
   },
   { "catppuccin/nvim", as = "catppuccin" },
+{ 
+  'olivercederborg/poimandres.nvim',
+  config = function()
+    require('poimandres').setup {
+      -- leave this setup function empty for default config
+      -- or refer to the configuration section
+      -- for configuration options
+    }
+  end
+},
+  { "catppuccin/nvim", as = "catppuccin" } ,
   -- "karb94/neoscroll.nvim",
   "opalmay/vim-smoothie",
   {
@@ -108,7 +119,13 @@ lvim.plugins = {
     "0x100101/lab.nvim",
     build = "cd js && npm ci",
   },
-  { "tzachar/cmp-tabnine", build = "./install.sh" },
+  { "tzachar/cmp-tabnine", run = "./install.sh" },
+{
+  "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+  config = function()
+    require("lsp_lines").setup()
+  end,
+},
   {
     "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
     config = function()

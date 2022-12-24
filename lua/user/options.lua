@@ -1,9 +1,6 @@
+-- lvim.builtin.cmp.experimental.ghost_text = true
 
-
-lvim.builtin.cmp.experimental.ghost_text = true
-
-
-lvim.colorscheme = "darkplus"
+lvim.colorscheme = "rose-pine"
 
 lvim.log.level = "warn"
 lvim.builtin.alpha.active = true
@@ -18,11 +15,14 @@ lvim.builtin.breadcrumbs.active = true
 lvim.builtin.treesitter.highlight.enabled = true
 lvim.builtin.dap.active = true
 lvim.builtin.cmp.cmdline.enable = false
-lvim.builtin.cmp.window.documentation = false
-lvim.builtin.cmp.window.completion = {
-  border = "rounded",
-  winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
-}
+-- lvim.builtin.cmp.experimental.view.entries = "native"
+-- lvim.builtin.cmp.view.entries = "native"
+lvim.builtin.cmp.window.documentation = true
+-- lvim.builtin.cmp.window.completion = {
+--   border = "rounded",
+--   winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
+-- }
+
 lvim.builtin.cmp.formatting.source_names = {
   nvim_lsp = "",
   emoji = "",
@@ -78,13 +78,13 @@ local options = {
   wrap = false, -- display lines as one long line
   scrolloff = 0,
   sidescrolloff = 8,
-  guifont = "JetBrains Mono:h13", -- the font used in graphical neovim applications
+  guifont = "JetBrainsMono Nerd Font:h13", -- the font used in graphical neovim applications
   title = true,
   -- colorcolumn = "80",
   -- colorcolumn = "120",
 }
 
-  vim.g.neovide_refresh_rate = 144
+-- vim.g.neovide_refresh_rate = 144
 -- vim.g.loaded_netrw = 1
 -- vim.g.loaded_netrwPlugin = 1
 -- vim.opt.fillchars.eob = " "

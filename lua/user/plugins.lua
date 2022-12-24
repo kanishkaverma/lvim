@@ -1,26 +1,43 @@
 -- Additional Plugins
 lvim.plugins = {
-"EdenEast/nightfox.nvim",
+  "EdenEast/nightfox.nvim",
   "rlane/pounce.nvim",
+  {
+    "folke/trouble.nvim",
+    requires = "kyazdani42/nvim-web-devicons",
+    config = function()
+      require("trouble").setup {}
+    end,
+  },
   "ellisonleao/gruvbox.nvim",
   "nvim-treesitter/playground",
   "nvim-treesitter/nvim-treesitter-textobjects",
   "p00f/nvim-ts-rainbow",
   "mfussenegger/nvim-jdtls",
-{ 
-  'olivercederborg/poimandres.nvim',
-  config = function()
-    require('poimandres').setup {
-      -- leave this setup function empty for default config
-      -- or refer to the configuration section
-      -- for configuration options
-    }
-  end
-},
-  { "catppuccin/nvim", as = "catppuccin" } ,
+  {
+    "olivercederborg/poimandres.nvim",
+    config = function()
+      require("poimandres").setup {
+        -- leave this setup function empty for default config
+        -- or refer to the configuration section
+        -- for configuration options
+      }
+    end,
+  },
+  { "catppuccin/nvim", as = "catppuccin" },
   -- "karb94/neoscroll.nvim",
   "opalmay/vim-smoothie",
-  -- "j-hui/fidget.nvim",
+  {
+    "rose-pine/neovim",
+    as = "rose-pine",
+    config = function()
+      require("rose-pine").setup {
+        dark_variant = "main",
+      }
+      -- vim.cmd('colorscheme rose-pine')
+    end,
+  },
+  "j-hui/fidget.nvim",
   "windwp/nvim-ts-autotag",
   -- "kylechui/nvim-surround",
   "christianchiarulli/harpoon",
@@ -82,12 +99,12 @@ lvim.plugins = {
     run = "cd js && npm ci",
   },
   { "tzachar/cmp-tabnine", run = "./install.sh" },
-{
-  "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-  config = function()
-    require("lsp_lines").setup()
-  end,
-},
+  {
+    "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+    config = function()
+      require("lsp_lines").setup()
+    end,
+  },
   {
     "zbirenbaum/copilot.lua",
     event = { "VimEnter" },

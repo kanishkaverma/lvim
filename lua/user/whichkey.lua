@@ -28,6 +28,7 @@ lvim.builtin.which_key.mappings["f"] = {
   b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
   c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
   f = { "<cmd>Telescope find_files<cr>", "Find files" },
+  -- f = {"<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_cursor({ winblend = 10 }))<cr>"},
   t = { "<cmd>Telescope live_grep<cr>", "Find Text" },
   s = { "<cmd>Telescope grep_string<cr>", "Find String" },
   h = { "<cmd>Telescope help_tags<cr>", "Help" },
@@ -81,7 +82,7 @@ lvim.builtin.which_key.mappings["l"] = {
   -- c = { "<cmd>lua require('user.lsp').server_capabilities()<cr>", "Get Capabilities" },
   d = { "<cmd>TroubleToggle<cr>", "Diagnostics" },
   w = {
-    "<cmd>Telescope lsp_workspace_diagnostics<cr>",
+    "<cmd>Telescope diagnostics<cr>",
     "Workspace Diagnostics",
   },
   f = { "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", "Format" },

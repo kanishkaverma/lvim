@@ -41,6 +41,9 @@ lvim.plugins = {
   "j-hui/fidget.nvim",
   "windwp/nvim-ts-autotag",
   -- "kylechui/nvim-surround",
+  "j-hui/fidget.nvim",
+  "christianchiarulli/nvim-ts-autotag",
+  "kylechui/nvim-surround",
   "christianchiarulli/harpoon",
   "MattesGroeger/vim-bookmarks",
   "NvChad/nvim-colorizer.lua",
@@ -82,6 +85,15 @@ lvim.plugins = {
           enabled = true,
           name = "crates.nvim",
         },
+      }
+    end,
+  },
+    "MunifTanjim/nui.nvim",
+  {
+    "jackMort/ChatGPT.nvim",
+    config = function()
+      require("chatgpt").setup {
+        -- optional configuration
       }
     end,
   },

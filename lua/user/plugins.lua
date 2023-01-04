@@ -13,7 +13,7 @@ lvim.plugins = {
   "lunarvim/github.nvim",
   "nvim-treesitter/playground",
   "nvim-treesitter/nvim-treesitter-textobjects",
-  "p00f/nvim-ts-rainbow",
+  "christianchiarulli/nvim-ts-rainbow",
   "mfussenegger/nvim-jdtls",
   {
     "olivercederborg/poimandres.nvim",

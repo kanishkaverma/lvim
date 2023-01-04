@@ -1,19 +1,9 @@
-local lspconfig = require "lspconfig"
-local configs = require "lspconfig/configs"
-local capabilities = vim.lsp.protocol.make_client_capabilities()
+vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "emmet-ls" })
 
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-
-lspconfig.emmet_ls.setup {
-  -- on_attach = on_attach,
-  capabilities = capabilities,
-  filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less" },
-  init_options = {
-    html = {
-      options = {
-        -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
-        ["bem.enabled"] = true,
-      },
-    },
-  },
-}
+local lsp_manager = require "lvim.lsp.manager"
+lsp_manager.setup("emmet_ls", {
+  filetypes = { "astro", "html" },
+  -- cmd = { "/Users/chris/Library/Caches/fnm_multishells/65657_1672759387689/bin/ls_emmet", "--stdio" },
+  on_init = require("lvim.lsp").common_on_init,
+  capabilities = require("lvim.lsp").common_capabilities(),
+})

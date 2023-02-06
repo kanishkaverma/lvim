@@ -1,0 +1,8 @@
+-- require("lvim.builtin.cmp").register_source("buffer", require "cmp_buffer")
+-- require("lvim.builtin.cmp").register_source("cmdline", require("cmp_cmdline").new())
+-- require("lvim.builtin.cmp").register_source("luasnip", require("cmp_luasnip").new())
+-- require("lvim.builtin.cmp").register_source("nvim_lsp_document_symbol", require("cmp_nvim_lsp_document_symbol").new())
+-- require("lvim.builtin.cmp").register_source("nvim_lua", require("cmp_nvim_lua").new())
+-- require("lvim.builtin.cmp").register_source("omni", require("cmp_omni").new())
+-- require("lvim.builtin.cmp").register_source("path", require("cmp_path").new())
+-- require("lvim.builtin.cmp_nvim_lsp").setup()

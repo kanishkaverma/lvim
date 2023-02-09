@@ -1,9 +1,38 @@
 -- Additional Plugins
 lvim.plugins = {
-  "folke/tokyonight.nvim",
+  -- "folke/tokyonight.nvim",
+  {
+    "rose-pine/neovim",
+    name = "rose-pine",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("rose-pine").setup()
+      vim.cmd "colorscheme rose-pine"
+    end,
+  },
+  "kvrohit/substrata.nvim",
   "MunifTanjim/nui.nvim",
-  "ellisonleao/gruvbox.nvim",
-  "LunarVim/synthwave84.nvim",
+  "Mofiqul/vscode.nvim",
+  "EdenEast/nightfox.nvim",
+  {
+    "olivercederborg/poimandres.nvim",
+    config = function()
+      require("poimandres").setup {
+        -- leave this setup function empty for default config
+        -- or refer to the configuration section
+        -- for configuration options
+      }
+    end,
+  },
+  -- "kevinhwang91/nvim-hlslens",
+  -- {
+  --   "ggandor/leap.nvim",
+  --   config = function()
+  --     -- require("leap").add_default_mappings(true)
+  --   end,
+  -- },
+  -- "rlane/pounce.nvim",
   "roobert/tailwindcss-colorizer-cmp.nvim",
   "lunarvim/github.nvim",
   "nvim-treesitter/playground",
@@ -14,7 +43,7 @@ lvim.plugins = {
   "opalmay/vim-smoothie",
   "j-hui/fidget.nvim",
   "christianchiarulli/nvim-ts-autotag",
-  "kylechui/nvim-surround",
+  -- "kylechui/nvim-surround",
   "christianchiarulli/harpoon",
   "MattesGroeger/vim-bookmarks",
   "NvChad/nvim-colorizer.lua",
@@ -32,8 +61,8 @@ lvim.plugins = {
   "lunarvim/templeos.nvim",
   "kevinhwang91/nvim-bqf",
   "is0n/jaq-nvim",
-  "hrsh7th/cmp-emoji",
-  "ggandor/leap.nvim",
+  -- "hrsh7th/cmp-emoji",
+  -- "ggandor/leap.nvim",
   "nacro90/numb.nvim",
   "TimUntersberger/neogit",
   "sindrets/diffview.nvim",
@@ -55,23 +84,22 @@ lvim.plugins = {
   },
   "mxsdev/nvim-dap-vscode-js",
   "petertriho/nvim-scrollbar",
-  "renerocksai/telekasten.nvim",
+  -- "renerocksai/telekasten.nvim",
   -- "renerocksai/calendar-vim",
-  {
-    "saecki/crates.nvim",
-    version = "v0.3.0",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    config = function()
-      require("crates").setup {
-        null_ls = {
-          enabled = true,
-          name = "crates.nvim",
-        },
-      }
-    end,
-  },
-  "MunifTanjim/nui.nvim",
-  "jackMort/ChatGPT.nvim",
+  -- {
+  --   "saecki/crates.nvim",
+  --   version = "v0.3.0",
+  --   dependencies = { "nvim-lua/plenary.nvim" },
+  --   config = function()
+  --     require("crates").setup {
+  --       null_ls = {
+  --         enabled = true,
+  --         name = "crates.nvim",
+  --       },
+  --     }
+  --   end,
+  -- },
+  -- "jackMort/ChatGPT.nvim",
   {
     "jinh0/eyeliner.nvim",
     config = function()
@@ -86,7 +114,7 @@ lvim.plugins = {
     "0x100101/lab.nvim",
     build = "cd js && npm ci",
   },
-  { "tzachar/cmp-tabnine", build = "./install.sh" },
+  -- { "tzachar/cmp-tabnine", build = "./install.sh" },
   -- {
   --   "zbirenbaum/copilot.lua",
   --   -- event = { "VimEnter" },

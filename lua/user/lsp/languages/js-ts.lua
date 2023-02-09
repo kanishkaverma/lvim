@@ -13,6 +13,7 @@ require("typescript").setup {
     on_attach = require("lvim.lsp").common_on_attach,
     on_init = require("lvim.lsp").common_on_init,
     capabilities = capabilities,
+    filetypes = { "typescriptreact", "typescript" },
     settings = {
       typescript = {
         inlayHints = {

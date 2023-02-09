@@ -1,7 +1,9 @@
+-- require("lazy").setup("plugins")
 reload "user.plugins"
 reload "user.options"
 reload "user.keymaps"
 reload "user.autocommands"
+reload "user.cmp"
 reload "user.lsp"
 reload "user.smoothie"
 reload "user.harpoon"

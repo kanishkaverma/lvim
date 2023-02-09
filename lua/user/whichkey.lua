@@ -117,14 +117,7 @@ lvim.builtin.which_key.mappings["l"] = {
     "Workspace Symbols",
   },
   t = { '<cmd>lua require("user.functions").toggle_diagnostics()<cr>', "Toggle Diagnostics" },
-  u = { "<cmd>LuaSnipUnlinkCurrent<cr>", "Unlink Snippet" },
-}
-lvim.builtin.which_key.mappings["t"] = {
-  name = "Tab",
-  t = {
-    "<cmd>lua require('telescope').extensions['telescope-tabs'].list_tabs(require('telescope.themes').get_dropdown{previewer = false, initial_mode='normal', prompt_title='Tabs'})<cr>",
-    "Find Tab",
-  },
+  u = { "<cmd>LuaSnipUnlinkCurrent<cr>", "Unl" },
   n = { "<cmd>tabnew %<cr>", "New Tab" },
   c = { "<cmd>tabclose<cr>", "Close Tab" },
   o = { "<cmd>tabonly<cr>", "Only Tab" },

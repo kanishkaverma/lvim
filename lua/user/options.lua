@@ -1,6 +1,6 @@
 lvim.format_on_save = true
 lvim.builtin.cmp.confirm_opts.select = true
-lvim.colorscheme = "tokyonight-moon"
+lvim.colorscheme = "rose-pine"
 -- lvim.builtin.lualine.options.theme = "tokyonight-moon"
 lvim.log.level = "warn"
 lvim.builtin.alpha.active = true
@@ -28,19 +28,20 @@ lvim.builtin.cmp.window.completion = {
   border = "rounded",
   winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
 }
-lvim.builtin.cmp.formatting.source_names = {
-  nvim_lsp = "",
-  emoji = "",
-  path = "",
-  calc = "",
-  cmp_tabnine = "",
-  vsnip = "",
-  luasnip = "",
-  buffer = "",
-  tmux = "",
-  copilot = "",
-  treesitter = "",
-}
+-- lvim.builtin.cmp.sources["2"].name = "nvim_lsp"
+-- lvim.builtin.cmp.formatting.source_names = {
+--   nvim_lsp = "",
+--   emoji = "",
+--   path = "",
+--   calc = "",
+--   cmp_tabnine = "",
+--   vsnip = "",
+--   luasnip = "",
+--   buffer = "",
+--   tmux = "",
+--   copilot = "",
+--   treesitter = "",
+-- }
 -- lvim.builtin.cmp.formatting = {
 --     format = require("tailwindcss-colorizer-cmp").formatter
 -- }
@@ -57,7 +58,7 @@ local options = {
   completeopt = { "menuone", "noselect" }, -- mostly just for cmp
   conceallevel = 0, -- so that `` is visible in markdown files
   fileencoding = "utf-8", -- the encoding written to a file
-  hlsearch = true, -- highlight all matches on previous search pattern
+  -- hlsearch = true, -- highlight all matches on previous search pattern
   ignorecase = true, -- ignore case in search patterns
   mouse = "a", -- allow the mouse to be used in neovim
   pumheight = 10, -- pop up menu height

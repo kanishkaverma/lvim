@@ -47,7 +47,7 @@ vim.g.smoothie_remapped_commands = {
 -- The following options were originally removed from the README by psliwka #22:
 
 -- g:smoothie_update_interval: (default: 20) Time (in milliseconds) between subsequent screen/cursor position updates. Lower value produces smoother animation. Might be useful to increase it when running Vim over low-bandwidth/high-latency connections.
-vim.g.smoothie_update_interval=10
+vim.g.smoothie_update_interval = 5
 -- g:smoothie_speed_constant_factor: (default: 10) This value controls constant term of the velocity curve. Increasing this boosts primarily cursor speed at the end of animation.
 -- vim.g.smoothie_speed_constant_factor=15
 -- g:smoothie_speed_linear_factor: (default: 10) This value controls linear term of the velocity curve. Increasing this boosts primarily cursor speed at the beginning of animation.

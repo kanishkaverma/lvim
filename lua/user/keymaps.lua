@@ -2,12 +2,13 @@ M = {}
 lvim.leader = "space"
 
 local opts = { noremap = true, silent = true }
+local noopts = { noremap = false, silent = true }
 -- For the description on keymaps, I have a function getOptions(desc) which returns noremap=true, silent=true and desc=desc. Then call: keymap(mode, keymap, command, getOptions("some randome desc")
 
 local keymap = vim.keymap.set
 
-keymap("n", "<C-Space>", "<cmd>WhichKey \\<space><cr>", opts)
-keymap("n", "<C-i>", "<C-i>", opts)
+-- keymap("n", "<C-Space>", "<cmd>WhichKey \\<space><cr>", opts)
+-- keymap("n", "<C-i>", "<C-i>", opts)
 
 -- Normal --
 -- Better window navigation
@@ -53,7 +54,6 @@ keymap("n", "g#", "g#zz", opts)
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
-
 
 keymap("x", "p", [["_dP]])
 -- keymap("v", "p", '"_dp', opts)
@@ -115,4 +115,8 @@ M.show_documentation = function()
 end
 vim.api.nvim_set_keymap("n", "K", ":lua require('user.keymaps').show_documentation()<CR>", opts)
 
-return M
+local noremap_opt = { noremap = false }
+
+-- keymap("n", "s", "<cmd>Pounce<CR>", noremap_opt)
+-- keymap("n", "S", "<cmd>PounceRepeat<CR>", noremap_opt)
+-- keymap("v", "s", "<cmd>Pounce<CR>", noremap_opt)

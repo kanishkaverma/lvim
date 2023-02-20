@@ -10,11 +10,12 @@ vim.opt.relativenumber = true
 
 -- general
 lvim.log.level = "info"
-lvim.format_on_save = {
-  enabled = true,
-  pattern = "*.lua",
-  timeout = 1000,
-}
+-- lvim.format_on_save = {
+--   enabled = false,
+--   pattern = "*.conf",
+--   timeout = 1000,
+-- }
+
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 

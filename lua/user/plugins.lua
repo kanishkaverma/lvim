@@ -1,14 +1,35 @@
 -- Additional Plugins
 lvim.plugins = {
-  -- "folke/tokyonight.nvim",
+{ "catppuccin/nvim", name = "catppuccin" },
+  { -- "folke/tokyonight.nvim",
+    "folke/persistence.nvim",
+    event = "BufReadPre",
+    opts = { options = { "buffers", "curdir", "tabpages", "winsize", "help" } },
+    -- stylua: ignore
+    keys = {
+      { "<leader>qs", function() require("persistence").load() end, desc = "Restore Session" },
+      { "<leader>ql", function() require("persistence").load({ last = true }) end, desc = "Restore Last Session" },
+      { "<leader>qd", function() require("persistence").stop() end, desc = "Don't Save Current Session" },
+    },
+  },
+  {
+    "akinsho/git-conflict.nvim",
+    version = "v1.0.0",
+    config = function()
+      require("git-conflict").setup {
+        highlights = { -- They must have background color, otherwise the default color will be used
+          incoming = "DiffText",
+          current = "DiffAdd",
+        },
+      }
+    end,
+  },
   {
     "rose-pine/neovim",
-    name = "rose-pine",
-    lazy = false,
-    priority = 1000,
+    -- priority = 1000,
     config = function()
       require("rose-pine").setup()
-      vim.cmd "colorscheme rose-pine"
+      -- vim.cmd "colorscheme rose-pine"
     end,
   },
   "kvrohit/substrata.nvim",
@@ -26,13 +47,13 @@ lvim.plugins = {
     end,
   },
   -- "kevinhwang91/nvim-hlslens",
-  -- {
-  --   "ggandor/leap.nvim",
-  --   config = function()
-  --     -- require("leap").add_default_mappings(true)
-  --   end,
-  -- },
-  -- "rlane/pounce.nvim",
+  {
+    "ggandor/leap.nvim",
+    config = function()
+      require("leap").add_default_mappings(true)
+    end,
+  },
+  "rlane/pounce.nvim",
   "roobert/tailwindcss-colorizer-cmp.nvim",
   "lunarvim/github.nvim",
   "nvim-treesitter/playground",
@@ -74,8 +95,6 @@ lvim.plugins = {
     "jose-elias-alvarez/typescript.nvim",
     config = function()
       require("typescript").setup {
-        disable_commands = false, -- prevent the plugin from creating Vim commands
-        debug = false, -- enable debug logging for commands
         go_to_source_definition = {
           fallback = true, -- fall back to standard LSP definition on failure
         },
@@ -115,24 +134,69 @@ lvim.plugins = {
     build = "cd js && npm ci",
   },
   -- { "tzachar/cmp-tabnine", build = "./install.sh" },
-  -- {
-  --   "zbirenbaum/copilot.lua",
-  --   -- event = { "VimEnter" },
-  --   config = function()
-  --     vim.defer_fn(function()
-  --       require("copilot").setup {
-  --         plugin_manager_path = os.getenv "LUNARVIM_RUNTIME_DIR" .. "/site/pack/packer",
-  --       }
-  --     end, 100)
-  --   end,
-  -- },
-  -- {
-  --   "zbirenbaum/copilot-cmp",
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = { "InsertEnter" },
+    config = function()
+      vim.defer_fn(function()
+        require("copilot").setup {
+          panel = {
+            enabled = false,
+            auto_refresh = false,
+            keymap = {
+              jump_prev = "[[",
+              jump_next = "]]",
+              accept = "<CR>",
+              refresh = "gr",
+              open = "<M-CR>",
+            },
+            layout = {
+              position = "bottom", -- | top | left | right
+              ratio = 0.4,
+            },
+          },
+          suggestion = {
+            enabled = true,
+            auto_trigger = true,
+            debounce = 75,
+            keymap = {
+              accept = "<c-a>",
+              accept_word = false,
+              accept_line = false,
+              next = "<M-]>",
+              prev = "<M-[>",
+              dismiss = "<C-]>",
+            },
+          },
+          filetypes = {
+            yaml = false,
+            markdown = false,
+            help = false,
+            gitcommit = false,
+            gitrebase = false,
+            hgcommit = false,
+            svn = false,
+            cvs = false,
+            ["."] = false,
+          },
+          copilot_node_command = "node", -- Node.js version must be > 16.x
+          server_opts_overrides = {},
+
+          plugin_manager_path = os.getenv "LUNARVIM_RUNTIME_DIR" .. "/site/pack/packer",
+        }
+      end, 100)
+    end,
+  },
+  -- { "zbirenbaum/copilot-cmp",
   --   after = { "copilot.lua" },
   --   config = function()
   --     require("copilot_cmp").setup {
+  --       method = "getCompletionsCycling",
   --       formatters = {
-  --         insert_text = require("copilot_cmp.format").remove_existing,
+  --         label = require("copilot_cmp.format").format_label_text,
+  --         insert_text = require("copilot_cmp.format").format_insert_text,
+  --         preview = require("copilot_cmp.format").deindent,
   --       },
   --     }
   --   end,

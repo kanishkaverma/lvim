@@ -16,6 +16,8 @@ lvim.builtin.cmp["sorting"] = {
   priority_weight = 2,
   comparators = {
     deprioritize_snippet,
+    -- require("copilot_cmp.comparators").prioritize,
+    -- require("copilot_cmp.comparators").score,
     -- the rest of the comparators are pretty much the defaults
     cmp.config.compare.offset,
     cmp.config.compare.exact,

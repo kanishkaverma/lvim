@@ -21,6 +21,8 @@ formatters.setup {
   { command = "stylua", filetypes = { "lua" } },
   { command = "shfmt", filetypes = { "sh", "zsh" } },
   { command = "prettier", filetypes = { "css" } },
+  -- for dosini filetype disable formatting
+  -- { command = "", filetypes = { "dosini" } },
 }
 
 -- lvim.lsp.on_attach_callback = function(client, bufnr)

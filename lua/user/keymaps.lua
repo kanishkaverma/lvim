@@ -117,6 +117,7 @@ vim.api.nvim_set_keymap("n", "K", ":lua require('user.keymaps').show_documentati
 
 local noremap_opt = { noremap = false }
 
+keymap("n", "<leader>ql", "<Cmd>!qa<CR>")
 -- keymap("n", "s", "<cmd>Pounce<CR>", noremap_opt)
 -- keymap("n", "S", "<cmd>PounceRepeat<CR>", noremap_opt)
 -- keymap("v", "s", "<cmd>Pounce<CR>", noremap_opt)

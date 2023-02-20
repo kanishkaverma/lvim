@@ -1,6 +1,13 @@
-lvim.format_on_save = true
+lvim.format_on_save = false
+
+-- lvim.format_on_save = {
+--   enabled = false,
+--   pattern = "*.conf",
+--   timeout = 1000,
+-- }
 lvim.builtin.cmp.confirm_opts.select = true
-lvim.colorscheme = "rose-pine"
+-- lvim.colorscheme = "rose-pine"
+lvim.colorscheme = "catppuccin-mocha"
 -- lvim.builtin.lualine.options.theme = "tokyonight-moon"
 lvim.log.level = "warn"
 lvim.builtin.alpha.active = true

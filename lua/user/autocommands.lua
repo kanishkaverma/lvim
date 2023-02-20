@@ -7,6 +7,19 @@
 --   end,
 -- })
 
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = { "dosini" },
+  callback = function()
+    vim.api.nvim_command "set commentstring=#%s"
+    vim.cmd [[
+      " nnoremap <silent> <buffer> <m-r> :close<CR>
+      lua lvim.format_on_save=false
+      " nnoremap <silent> <buffer> <m-r> <NOP> 
+      set nobuflisted 
+    ]]
+  end,
+})
+
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
   callback = function()
     vim.cmd "set formatoptions-=cro"

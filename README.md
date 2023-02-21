@@ -79,6 +79,7 @@ $ chmod +x ~/.local/bin/rust-analyzer
 ```
 
 ## TODO
+ 
 
 - use codicons (update codicons)
 - fix border

@@ -2,6 +2,7 @@ M = {}
 lvim.leader = "space"
 
 local opts = { noremap = true, silent = true }
+local noopts = { noremap = false, silent = true }
 -- For the description on keymaps, I have a function getOptions(desc) which returns noremap=true, silent=true and desc=desc. Then call: keymap(mode, keymap, command, getOptions("some randome desc")
 
 local keymap = vim.keymap.set
@@ -9,19 +10,17 @@ local keymap = vim.keymap.set
 keymap("n", "<C-Space>", "<cmd>WhichKey \\<space><cr>", opts)
 keymap("n", "<C-i>", "<C-i>", opts)
 
--- Normal --
--- Better window navigation
-keymap("n", "<m-h>", "<C-w>h", opts)
-keymap("n", "<m-j>", "<C-w>j", opts)
-keymap("n", "<m-k>", "<C-w>k", opts)
-keymap("n", "<m-l>", "<C-w>l", opts)
+keymap("n", "<C-h>", "<C-w>h", opts)
+keymap("n", "<C-j>", "<C-w>j", opts)
+keymap("n", "<C-k>", "<C-w>k", opts)
+keymap("n", "<C-l>", "<C-w>l", opts)
 keymap("n", "<m-tab>", "<c-6>", opts)
 
 function _G.set_terminal_keymaps()
-  vim.api.nvim_buf_set_keymap(0, "t", "<m-h>", [[<C-\><C-n><C-W>h]], opts)
-  vim.api.nvim_buf_set_keymap(0, "t", "<m-j>", [[<C-\><C-n><C-W>j]], opts)
-  vim.api.nvim_buf_set_keymap(0, "t", "<m-k>", [[<C-\><C-n><C-W>k]], opts)
-  vim.api.nvim_buf_set_keymap(0, "t", "<m-l>", [[<C-\><C-n><C-W>l]], opts)
+  vim.api.nvim_buf_set_keymap(0, "t", "<C-h>", [[<C-\><C-n><C-W>h]], opts)
+  vim.api.nvim_buf_set_keymap(0, "t", "<C-j>", [[<C-\><C-n><C-W>j]], opts)
+  vim.api.nvim_buf_set_keymap(0, "t", "<C-k>", [[<C-\><C-n><C-W>k]], opts)
+  vim.api.nvim_buf_set_keymap(0, "t", "<C-l>", [[<C-\><C-n><C-W>l]], opts)
 end
 
 vim.cmd "autocmd! TermOpen term://* lua set_terminal_keymaps()"
@@ -38,8 +37,8 @@ keymap("n", "<C-Down>", ":resize +2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
-keymap("n", "<c-j>", "<c-d>", opts)
-keymap("n", "<c-k>", "<c-u>", opts)
+-- keymap("n", "<c-j>", "<c-d>", opts)
+-- keymap("n", "<c-k>", "<c-u>", opts)
 keymap("n", "<c-m>", "<s-m>", opts)
 
 keymap("n", "n", "nzz", opts)
@@ -114,5 +113,12 @@ M.show_documentation = function()
   end
 end
 vim.api.nvim_set_keymap("n", "K", ":lua require('user.keymaps').show_documentation()<CR>", opts)
+
+local noremap_opt = { noremap = false }
+
+keymap("n", "<leader>ql", "<Cmd>!qa<CR>")
+-- keymap("n", "s", "<cmd>Pounce<CR>", noremap_opt)
+-- keymap("n", "S", "<cmd>PounceRepeat<CR>", noremap_opt)
+-- keymap("v", "s", "<cmd>Pounce<CR>", noremap_opt)
 
 return M
